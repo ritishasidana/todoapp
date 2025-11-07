@@ -1,0 +1,117 @@
+body {
+    position: relative;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Dimmed + blurred background */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('pexels-content-pixie-1405717-2736499.jpg') center/cover no-repeat;
+    filter: brightness(0.5) blur(2px);
+    z-index: -1;
+}
+
+.container {
+    background: rgba(255, 248, 240, 0.85); /* slightly less transparent for readability */
+    padding: 50px 45px;
+    border-radius: 22px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    text-align: center;
+    color: #2c2c2c;
+    backdrop-filter: blur(12px) saturate(120%);
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #1a1a1a; /* Darker heading for contrast */
+}
+
+/* Input */
+input#todo-input {
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c2c2c;
+    font-weight: 500; /* Medium weight */
+    margin-right: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input#todo-input:focus {
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Button */
+button#add-task-btn {
+    padding: 10px 14px;
+    background: linear-gradient(135deg, #6a00ff, #8e2de2);
+    border: none;
+    color: #ffffff; /* White text for visibility */
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button#add-task-btn:hover {
+    background: linear-gradient(135deg, #8e2de2, #6a00ff);
+}
+
+/* Task List */
+ul#todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#todo-list li {
+    background: rgba(255, 255, 255, 0.9); /* Almost solid for visibility */
+    color: #2c2c2c;
+    font-weight: 500;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+#todo-list li:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Delete Button */
+#todo-list li button {
+    background-color: #e74c3c;
+    border: none;
+    color: white; /* White for readability */
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#todo-list li button:hover {
+    background-color: #c0392b;
+}
+
+/* Completed Task */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
